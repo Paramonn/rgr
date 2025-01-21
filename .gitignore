@@ -1,0 +1,6 @@
+.vscode/
+.mvn/
+target
+HELP.md
+README.Docker.md
+.env

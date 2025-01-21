@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <form class="form-container" th:action="@{/register}" th:object="${user}" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" th:field="*{username}" 
+                   pattern="^[a-zA-Z0-9@_.-]{3,20}$" 
+                   title="Username must be 3-20 characters long and can include letters, numbers, @, _, ., or -." 
+                   required />
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" th:field="*{password}" 
+                   pattern="^[a-zA-Z0-9@_.-]{3,20}$" 
+                   title="Password must be 3-20 characters long and can include letters, numbers, @, _, ., or -." 
+                   required />
+
+            <button type="submit" class="button">Register</button>
+        </form>
+        <p>Already have an account? <a th:href="@{/login}">Login here</a></p>
+    </div>
+</body>
+</html>
